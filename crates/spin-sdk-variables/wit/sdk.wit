@@ -1,0 +1,3 @@
+component {
+    import spin:variables/variables@3.0.0;
+}

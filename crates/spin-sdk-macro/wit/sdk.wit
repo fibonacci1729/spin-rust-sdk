@@ -1,0 +1,43 @@
+package spin:redis@3.0.0 {
+    interface redis {
+        /// Errors related to interacting with Redis
+        variant error {
+            /// An invalid address string
+            invalid-address,
+            /// There are too many open connections
+            too-many-connections,
+            /// A retrieved value was not of the correct type
+            type-error,
+            /// Some other error occurred
+            other(string),
+        }
+
+        /// The message payload.
+        type payload = list<u8>;
+
+        /// A parameter type for the general-purpose `execute` function.
+        variant redis-parameter {
+            int64(s64),
+            binary(payload)
+        }
+
+        /// A return type for the general-purpose `execute` function.
+        variant redis-result {
+            nil,
+            status(string),
+            int64(s64),
+            binary(payload)
+        }
+    }
+
+    interface inbound-redis {
+        use redis.{payload, error};
+
+        // The entrypoint for a Redis handler.
+        handle-message: async func(message: payload) -> result<_, error>;
+    }
+};
+
+component {
+    export spin:redis/inbound-redis@3.0.0;
+}

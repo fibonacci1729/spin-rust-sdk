@@ -1,0 +1,3 @@
+component {
+    import fermyon:spin/mysql@2.0.0;
+}

@@ -1,0 +1,3 @@
+component {
+    import spin:postgres/postgres@4.2.0;
+}

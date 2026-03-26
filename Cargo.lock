@@ -51,15 +51,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7c02d123df017efcdfbd739ef81735b36c5ba83ec3c59c80a9d7ecc718f92e50"
 
 [[package]]
-name = "async-spin-redis"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "bytes",
- "spin-sdk",
-]
-
-[[package]]
 name = "async-trait"
 version = "0.1.89"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -81,73 +72,6 @@ name = "autocfg"
 version = "1.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
-
-[[package]]
-name = "axum"
-version = "0.8.6"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8a18ed336352031311f4e0b4dd2ff392d4fbb370777c9d18d7fc9d7359f73871"
-dependencies = [
- "axum-core",
- "axum-macros",
- "bytes",
- "futures-util",
- "http 1.3.1",
- "http-body 1.0.1",
- "http-body-util",
- "itoa",
- "matchit",
- "memchr",
- "mime",
- "percent-encoding",
- "pin-project-lite",
- "serde_core",
- "serde_json",
- "serde_path_to_error",
- "sync_wrapper 1.0.2",
- "tower",
- "tower-layer",
- "tower-service",
-]
-
-[[package]]
-name = "axum-core"
-version = "0.5.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "59446ce19cd142f8833f856eb31f3eb097812d1479ab224f54d72428ca21ea22"
-dependencies = [
- "bytes",
- "futures-core",
- "http 1.3.1",
- "http-body 1.0.1",
- "http-body-util",
- "mime",
- "pin-project-lite",
- "sync_wrapper 1.0.2",
- "tower-layer",
- "tower-service",
-]
-
-[[package]]
-name = "axum-macros"
-version = "0.5.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "604fde5e028fea851ce1d8570bbdc034bec850d157f7569d10f347d06808c05c"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 2.0.108",
-]
-
-[[package]]
-name = "axum-router"
-version = "0.1.0"
-dependencies = [
- "axum",
- "serde",
- "spin-sdk",
- "tower-service",
-]
 
 [[package]]
 name = "base64"
@@ -848,7 +772,7 @@ checksum = "335ff9f135e4384c8150d6f27c6daed433577f86b4750418338c01a1a2528592"
 dependencies = [
  "cfg-if",
  "libc",
- "wasi 0.11.1+wasi-snapshot-preview1",
+ "wasi",
 ]
 
 [[package]]
@@ -937,22 +861,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2304e00983f87ffb38b55b444b5e3b60a884b5d30c0fca7d82fe33449bbe55ea"
 
 [[package]]
-name = "hello-world"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "http 1.3.1",
- "serde",
- "spin-sdk",
-]
-
-[[package]]
-name = "hex"
-version = "0.4.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
-
-[[package]]
 name = "hmac"
 version = "0.12.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1015,39 +923,6 @@ dependencies = [
  "http 1.3.1",
  "http-body 1.0.1",
  "pin-project-lite",
-]
-
-[[package]]
-name = "http-hello"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "http 1.3.1",
- "spin-sdk",
-]
-
-[[package]]
-name = "http-rust-outbound-http"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "spin-sdk",
-]
-
-[[package]]
-name = "http-rust-router"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "spin-sdk",
-]
-
-[[package]]
-name = "http-rust-router-macro"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "spin-sdk",
 ]
 
 [[package]]
@@ -1358,16 +1233,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "json-http-rust"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "http 1.3.1",
- "serde",
- "spin-sdk",
-]
-
-[[package]]
 name = "leb128"
 version = "0.2.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1435,10 +1300,15 @@ dependencies = [
 ]
 
 [[package]]
-name = "matchit"
-version = "0.8.4"
+name = "macro-string"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "47e1ffaa40ddd1f3ed91f717a33c8c0ee23fff369e3aa8772b9605cc1d22f4c3"
+checksum = "59a9dbbfc75d2688ed057456ce8a3ee3f48d12eec09229f560f3643b9f275653"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.108",
+]
 
 [[package]]
 name = "maybe-owned"
@@ -1484,7 +1354,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "69d83b0086dc8ecf3ce9ae2874b2d1290252e2a30720bea58a5c6639b0092873"
 dependencies = [
  "libc",
- "wasi 0.11.1+wasi-snapshot-preview1",
+ "wasi",
  "windows-sys 0.61.2",
 ]
 
@@ -1574,14 +1444,6 @@ dependencies = [
  "libc",
  "pkg-config",
  "vcpkg",
-]
-
-[[package]]
-name = "outbound-http-to-same-app"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "spin-sdk",
 ]
 
 [[package]]
@@ -1885,7 +1747,7 @@ dependencies = [
  "serde",
  "serde_json",
  "serde_urlencoded",
- "sync_wrapper 0.1.2",
+ "sync_wrapper",
  "system-configuration",
  "tokio",
  "tokio-native-tls",
@@ -1909,80 +1771,6 @@ dependencies = [
  "libc",
  "untrusted",
  "windows-sys 0.52.0",
-]
-
-[[package]]
-name = "routefinder"
-version = "0.5.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0971d3c8943a6267d6bd0d782fdc4afa7593e7381a92a3df950ff58897e066b5"
-dependencies = [
- "smartcow",
- "smartstring",
-]
-
-[[package]]
-name = "rust-key-value"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "http 1.3.1",
- "spin-sdk",
-]
-
-[[package]]
-name = "rust-outbound-mqtt"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "spin-sdk",
-]
-
-[[package]]
-name = "rust-outbound-mysql"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "http 1.3.1",
- "serde",
- "serde_json",
- "spin-sdk",
-]
-
-[[package]]
-name = "rust-outbound-pg"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "http 1.3.1",
- "spin-sdk",
-]
-
-[[package]]
-name = "rust-outbound-pg-v3"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "chrono",
- "http 1.3.1",
- "spin-sdk",
-]
-
-[[package]]
-name = "rust-outbound-pg-v4"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "http 1.3.1",
- "spin-sdk",
-]
-
-[[package]]
-name = "rust-outbound-redis"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "spin-sdk",
 ]
 
 [[package]]
@@ -2141,16 +1929,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "send-request"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "axum",
- "http 1.3.1",
- "spin-sdk",
-]
-
-[[package]]
 name = "serde"
 version = "1.0.228"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2189,17 +1967,6 @@ dependencies = [
  "itoa",
  "memchr",
  "ryu",
- "serde",
- "serde_core",
-]
-
-[[package]]
-name = "serde_path_to_error"
-version = "0.1.20"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "10a9ff822e371bb5403e391ecd83e182e0e77ba7f6fe0160b795797109d1b457"
-dependencies = [
- "itoa",
  "serde",
  "serde_core",
 ]
@@ -2265,24 +2032,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "simple-http"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "http 1.3.1",
- "spin-sdk",
-]
-
-[[package]]
-name = "simple-redis"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "bytes",
- "spin-sdk",
-]
-
-[[package]]
 name = "sized-chunks"
 version = "0.6.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2308,26 +2057,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "smartcow"
-version = "0.2.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "656fcb1c1fca8c4655372134ce87d8afdf5ec5949ebabe8d314be0141d8b5da2"
-dependencies = [
- "smartstring",
-]
-
-[[package]]
-name = "smartstring"
-version = "1.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3fb72c633efbaa2dd666986505016c32c3044395ceaf881518399d2f4127ee29"
-dependencies = [
- "autocfg",
- "static_assertions",
- "version_check",
-]
-
-[[package]]
 name = "socket2"
 version = "0.5.10"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2348,82 +2077,33 @@ dependencies = [
 ]
 
 [[package]]
-name = "spin-executor"
-version = "5.2.0"
-dependencies = [
- "futures",
- "once_cell",
- "wasi 0.13.1+wasi-0.2.0",
-]
-
-[[package]]
-name = "spin-macro"
-version = "5.2.0"
-dependencies = [
- "anyhow",
- "bytes",
- "proc-macro2",
- "quote",
- "syn 1.0.109",
-]
-
-[[package]]
 name = "spin-sdk"
 version = "5.2.0"
 dependencies = [
- "anyhow",
- "async-trait",
- "bytes",
- "chrono",
- "form_urlencoded",
- "futures",
- "http 1.3.1",
  "http-body-util",
  "hyper 1.7.0",
- "once_cell",
- "postgres_range",
  "reqwest",
- "routefinder",
- "rust_decimal",
- "serde",
- "serde_json",
- "spin-executor",
- "spin-macro",
- "spin-wasip3-http",
- "spin-wasip3-http-macro",
- "thiserror 2.0.17",
+ "spin-sdk-http",
+ "spin-sdk-kv",
+ "spin-sdk-llm",
+ "spin-sdk-macro",
+ "spin-sdk-mqtt",
+ "spin-sdk-mysql",
+ "spin-sdk-pg",
+ "spin-sdk-redis",
+ "spin-sdk-sqlite",
+ "spin-sdk-variables",
+ "spin-sdk-wasi",
  "tokio",
- "uuid",
- "wasi 0.13.1+wasi-0.2.0",
  "wasmtime",
  "wasmtime-wasi",
  "wasmtime-wasi-http",
- "wit-bindgen 0.54.0",
- "wit-component",
+ "wit-bindgen 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
+ "wit-component 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
-name = "spin-variables-example"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "spin-sdk",
-]
-
-[[package]]
-name = "spin-wasi-http-streaming-file"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "futures",
- "hex",
- "sha2",
- "spin-sdk",
- "url",
-]
-
-[[package]]
-name = "spin-wasip3-http"
+name = "spin-sdk-http"
 version = "5.2.0"
 dependencies = [
  "anyhow",
@@ -2435,7 +2115,24 @@ dependencies = [
 ]
 
 [[package]]
-name = "spin-wasip3-http-macro"
+name = "spin-sdk-kv"
+version = "5.2.0"
+dependencies = [
+ "anyhow",
+ "serde",
+ "serde_json",
+ "wit-bindgen 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
+]
+
+[[package]]
+name = "spin-sdk-llm"
+version = "5.2.0"
+dependencies = [
+ "wit-bindgen 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
+]
+
+[[package]]
+name = "spin-sdk-macro"
 version = "5.2.0"
 dependencies = [
  "proc-macro2",
@@ -2444,12 +2141,60 @@ dependencies = [
 ]
 
 [[package]]
-name = "spinredis"
-version = "0.1.0"
+name = "spin-sdk-mqtt"
+version = "5.2.0"
 dependencies = [
- "anyhow",
- "bytes",
- "spin-sdk",
+ "wit-bindgen 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
+]
+
+[[package]]
+name = "spin-sdk-mysql"
+version = "5.2.0"
+dependencies = [
+ "thiserror 2.0.17",
+ "wit-bindgen 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
+]
+
+[[package]]
+name = "spin-sdk-pg"
+version = "5.2.0"
+dependencies = [
+ "chrono",
+ "postgres_range",
+ "rust_decimal",
+ "serde",
+ "serde_json",
+ "thiserror 2.0.17",
+ "uuid",
+ "wit-bindgen 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
+]
+
+[[package]]
+name = "spin-sdk-redis"
+version = "5.2.0"
+dependencies = [
+ "wit-bindgen 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
+]
+
+[[package]]
+name = "spin-sdk-sqlite"
+version = "5.2.0"
+dependencies = [
+ "wit-bindgen 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
+]
+
+[[package]]
+name = "spin-sdk-variables"
+version = "5.2.0"
+dependencies = [
+ "wit-bindgen 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
+]
+
+[[package]]
+name = "spin-sdk-wasi"
+version = "5.2.0"
+dependencies = [
+ "wit-bindgen 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
 ]
 
 [[package]]
@@ -2457,12 +2202,6 @@ name = "stable_deref_trait"
 version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6ce2be8dc25455e1f91df71bfa12ad37d7af1092ae736f3a6cd0e37bc7810596"
-
-[[package]]
-name = "static_assertions"
-version = "1.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
 
 [[package]]
 name = "stringprep"
@@ -2508,12 +2247,6 @@ name = "sync_wrapper"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2047c6ded9c721764247e62cd3b03c09ffc529b2ba5b10ec482ae507a4a70160"
-
-[[package]]
-name = "sync_wrapper"
-version = "1.0.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0bf256ce5efdfa370213c1dabab5935a12e49f2c58d15e9eac2870d3b4f27263"
 
 [[package]]
 name = "synstructure"
@@ -2757,26 +2490,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ab16f14aed21ee8bfd8ec22513f7287cd4a91aa92e44edfe2c17ddd004e92607"
 
 [[package]]
-name = "tower"
-version = "0.5.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d039ad9159c98b70ecfd540b2573b97f7f52c3e8d9f8ad57a24b916a536975f9"
-dependencies = [
- "futures-core",
- "futures-util",
- "pin-project-lite",
- "sync_wrapper 1.0.2",
- "tower-layer",
- "tower-service",
-]
-
-[[package]]
-name = "tower-layer"
-version = "0.3.3"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "121c2a6cda46980bb0fcd1647ffaf6cd3fc79a013de288782836f6df9c48780e"
-
-[[package]]
 name = "tower-service"
 version = "0.3.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2932,27 +2645,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ccf3ec651a847eb01de73ccad15eb7d99f80485de043efb2f370cd654f4ea44b"
 
 [[package]]
-name = "wasi"
-version = "0.13.1+wasi-0.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2f43d1c36145feb89a3e61aa0ba3e582d976a8ab77f1474aa0adb80800fe0cf8"
-dependencies = [
- "wit-bindgen-rt",
-]
-
-[[package]]
-name = "wasi-http-rust-streaming-outgoing-body"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "futures",
- "hex",
- "sha2",
- "spin-sdk",
- "url",
-]
-
-[[package]]
 name = "wasip2"
 version = "1.0.1+wasi-0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2970,14 +2662,7 @@ dependencies = [
  "http 1.3.1",
  "http-body 1.0.1",
  "thiserror 2.0.17",
- "wit-bindgen 0.54.0",
-]
-
-[[package]]
-name = "wasip3-hello-world"
-version = "0.1.0"
-dependencies = [
- "spin-sdk",
+ "wit-bindgen 0.54.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -3054,8 +2739,8 @@ dependencies = [
  "serde_derive",
  "serde_yaml",
  "smallvec",
- "wasm-encoder",
- "wasmparser",
+ "wasm-encoder 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "wasmparser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "wat",
 ]
 
@@ -3066,7 +2751,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3f9dca005e69bf015e45577e415b9af8c67e8ee3c0e38b5b0add5aa92581ed5c"
 dependencies = [
  "leb128fmt",
- "wasmparser",
+ "wasmparser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "wasm-encoder"
+version = "0.245.1"
+source = "git+https://github.com/fibonacci1729/wasm-tools?branch=component#6838ca449d8a2eea638144f9ac5aa18aebe9b6be"
+dependencies = [
+ "leb128fmt",
+ "wasmparser 0.245.1 (git+https://github.com/fibonacci1729/wasm-tools?branch=component)",
 ]
 
 [[package]]
@@ -3077,8 +2771,19 @@ checksum = "da55e60097e8b37b475a0fa35c3420dd71d9eb7bd66109978ab55faf56a57efb"
 dependencies = [
  "anyhow",
  "indexmap",
- "wasm-encoder",
- "wasmparser",
+ "wasm-encoder 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "wasmparser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "wasm-metadata"
+version = "0.245.1"
+source = "git+https://github.com/fibonacci1729/wasm-tools?branch=component#6838ca449d8a2eea638144f9ac5aa18aebe9b6be"
+dependencies = [
+ "anyhow",
+ "indexmap",
+ "wasm-encoder 0.245.1 (git+https://github.com/fibonacci1729/wasm-tools?branch=component)",
+ "wasmparser 0.245.1 (git+https://github.com/fibonacci1729/wasm-tools?branch=component)",
 ]
 
 [[package]]
@@ -3095,6 +2800,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "wasmparser"
+version = "0.245.1"
+source = "git+https://github.com/fibonacci1729/wasm-tools?branch=component#6838ca449d8a2eea638144f9ac5aa18aebe9b6be"
+dependencies = [
+ "bitflags 2.10.0",
+ "hashbrown 0.16.1",
+ "indexmap",
+ "semver",
+]
+
+[[package]]
 name = "wasmprinter"
 version = "0.245.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3102,7 +2818,7 @@ checksum = "5f41517a3716fbb8ccf46daa9c1325f760fcbff5168e75c7392288e410b91ac8"
 dependencies = [
  "anyhow",
  "termcolor",
- "wasmparser",
+ "wasmparser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -3140,8 +2856,8 @@ dependencies = [
  "target-lexicon",
  "tempfile",
  "wasm-compose",
- "wasm-encoder",
- "wasmparser",
+ "wasm-encoder 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "wasmparser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "wasmtime-environ",
  "wasmtime-internal-cache",
  "wasmtime-internal-component-macro",
@@ -3182,8 +2898,8 @@ dependencies = [
  "sha2",
  "smallvec",
  "target-lexicon",
- "wasm-encoder",
- "wasmparser",
+ "wasm-encoder 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "wasmparser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "wasmprinter",
  "wasmtime-internal-component-util",
  "wasmtime-internal-core",
@@ -3221,7 +2937,7 @@ dependencies = [
  "syn 2.0.108",
  "wasmtime-internal-component-util",
  "wasmtime-internal-wit-bindgen",
- "wit-parser",
+ "wit-parser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -3262,7 +2978,7 @@ dependencies = [
  "smallvec",
  "target-lexicon",
  "thiserror 2.0.17",
- "wasmparser",
+ "wasmparser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "wasmtime-environ",
  "wasmtime-internal-core",
  "wasmtime-internal-unwinder",
@@ -3343,7 +3059,7 @@ dependencies = [
  "log",
  "object",
  "target-lexicon",
- "wasmparser",
+ "wasmparser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "wasmtime-environ",
  "wasmtime-internal-cranelift",
  "winch-codegen",
@@ -3359,7 +3075,7 @@ dependencies = [
  "bitflags 2.10.0",
  "heck",
  "indexmap",
- "wit-parser",
+ "wit-parser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -3447,7 +3163,7 @@ dependencies = [
  "leb128fmt",
  "memchr",
  "unicode-width",
- "wasm-encoder",
+ "wasm-encoder 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -3571,7 +3287,7 @@ dependencies = [
  "smallvec",
  "target-lexicon",
  "thiserror 2.0.17",
- "wasmparser",
+ "wasmparser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
  "wasmtime-environ",
  "wasmtime-internal-core",
  "wasmtime-internal-cranelift",
@@ -3905,9 +3621,17 @@ version = "0.54.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "2bb00254d5051d69730ee32580b7373592f10ad786757c372f0f2c7b61f86a2c"
 dependencies = [
- "bitflags 2.10.0",
  "futures",
- "wit-bindgen-rust-macro",
+ "wit-bindgen-rust-macro 0.54.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "wit-bindgen"
+version = "0.54.0"
+source = "git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component#b25f2b048832154a97dbc799c6b6bc0a96c52fb2"
+dependencies = [
+ "bitflags 2.10.0",
+ "wit-bindgen-rust-macro 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
 ]
 
 [[package]]
@@ -3918,16 +3642,17 @@ checksum = "99cdef5ccf0b0e9bf30868d6f9c5ed116c84ae95f84ba29d2216d3e922de3963"
 dependencies = [
  "anyhow",
  "heck",
- "wit-parser",
+ "wit-parser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
-name = "wit-bindgen-rt"
-version = "0.24.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3b0780cf7046630ed70f689a098cd8d56c5c3b22f2a7379bbdb088879963ff96"
+name = "wit-bindgen-core"
+version = "0.54.0"
+source = "git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component#b25f2b048832154a97dbc799c6b6bc0a96c52fb2"
 dependencies = [
- "bitflags 2.10.0",
+ "anyhow",
+ "heck",
+ "wit-parser 0.245.1 (git+https://github.com/fibonacci1729/wasm-tools?branch=component)",
 ]
 
 [[package]]
@@ -3941,9 +3666,24 @@ dependencies = [
  "indexmap",
  "prettyplease",
  "syn 2.0.108",
- "wasm-metadata",
- "wit-bindgen-core",
- "wit-component",
+ "wasm-metadata 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "wit-bindgen-core 0.54.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "wit-component 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "wit-bindgen-rust"
+version = "0.54.0"
+source = "git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component#b25f2b048832154a97dbc799c6b6bc0a96c52fb2"
+dependencies = [
+ "anyhow",
+ "heck",
+ "indexmap",
+ "prettyplease",
+ "syn 2.0.108",
+ "wasm-metadata 0.245.1 (git+https://github.com/fibonacci1729/wasm-tools?branch=component)",
+ "wit-bindgen-core 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
+ "wit-component 0.245.1 (git+https://github.com/fibonacci1729/wasm-tools?branch=component)",
 ]
 
 [[package]]
@@ -3957,8 +3697,23 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn 2.0.108",
- "wit-bindgen-core",
- "wit-bindgen-rust",
+ "wit-bindgen-core 0.54.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "wit-bindgen-rust 0.54.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "wit-bindgen-rust-macro"
+version = "0.54.0"
+source = "git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component#b25f2b048832154a97dbc799c6b6bc0a96c52fb2"
+dependencies = [
+ "anyhow",
+ "macro-string",
+ "prettyplease",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.108",
+ "wit-bindgen-core 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
+ "wit-bindgen-rust 0.54.0 (git+https://github.com/fibonacci1729/wit-bindgen.git?branch=component)",
 ]
 
 [[package]]
@@ -3974,10 +3729,28 @@ dependencies = [
  "serde",
  "serde_derive",
  "serde_json",
- "wasm-encoder",
- "wasm-metadata",
- "wasmparser",
- "wit-parser",
+ "wasm-encoder 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "wasm-metadata 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "wasmparser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "wit-parser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "wit-component"
+version = "0.245.1"
+source = "git+https://github.com/fibonacci1729/wasm-tools?branch=component#6838ca449d8a2eea638144f9ac5aa18aebe9b6be"
+dependencies = [
+ "anyhow",
+ "bitflags 2.10.0",
+ "indexmap",
+ "log",
+ "serde",
+ "serde_derive",
+ "serde_json",
+ "wasm-encoder 0.245.1 (git+https://github.com/fibonacci1729/wasm-tools?branch=component)",
+ "wasm-metadata 0.245.1 (git+https://github.com/fibonacci1729/wasm-tools?branch=component)",
+ "wasmparser 0.245.1 (git+https://github.com/fibonacci1729/wasm-tools?branch=component)",
+ "wit-parser 0.245.1 (git+https://github.com/fibonacci1729/wasm-tools?branch=component)",
 ]
 
 [[package]]
@@ -3996,7 +3769,25 @@ dependencies = [
  "serde_derive",
  "serde_json",
  "unicode-xid",
- "wasmparser",
+ "wasmparser 0.245.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "wit-parser"
+version = "0.245.1"
+source = "git+https://github.com/fibonacci1729/wasm-tools?branch=component#6838ca449d8a2eea638144f9ac5aa18aebe9b6be"
+dependencies = [
+ "anyhow",
+ "hashbrown 0.16.1",
+ "id-arena",
+ "indexmap",
+ "log",
+ "semver",
+ "serde",
+ "serde_derive",
+ "serde_json",
+ "unicode-xid",
+ "wasmparser 0.245.1 (git+https://github.com/fibonacci1729/wasm-tools?branch=component)",
 ]
 
 [[package]]

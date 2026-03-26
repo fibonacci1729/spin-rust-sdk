@@ -1,0 +1,3 @@
+component {
+    import fermyon:spin/llm@2.0.0;
+}

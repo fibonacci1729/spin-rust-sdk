@@ -1,0 +1,3 @@
+component {
+    import spin:redis/redis@3.0.0;
+}

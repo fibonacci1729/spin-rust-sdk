@@ -1,0 +1,23 @@
+[package]
+name = "spin-sdk-http"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version = "1.93"  # workspace version doesn't suffice for P3
+homepage.workspace = true
+description = """
+Spin WASIp3 HTTP SDK
+"""
+
+[dependencies]
+anyhow = { workspace = true }
+# async-trait = "0.1.89"
+bytes = { workspace = true }
+# form_urlencoded = "1.2"
+http-body = { workspace = true }
+http-body-util = { workspace = true }
+hyperium = { workspace = true }
+# routefinder = "0.5.4"
+wasip3 = { version = "0.5.0", git = "https://github.com/bytecodealliance/wasi-rs", features = ["http-compat"] }
